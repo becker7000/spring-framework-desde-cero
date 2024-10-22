@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+    </style>
+    <title>Usando AJAX básico</title>
+</head>
+<body>
+
+<div class="titulo">
+    <h2>Usando AJAX con JQuery</h2>
+    <button onclick="peticion()">Click</button>
+</div>
+<div class="contenedor">
+    <p id="mostrar"></p>
+</div>
+<script>
+    function peticion(){
+
+    $.ajax("/webapp/hola.txt",{
+
+        success(text){
+            document.getElementById("mostrar").innerHTML=text;
+        },
+        error(){
+            document.getElementById("mostrar").innerHTML="Error al cargar el archivo.";
+        }
+
+    });
+
+    }
+</script>
+
+</body>
+</html>

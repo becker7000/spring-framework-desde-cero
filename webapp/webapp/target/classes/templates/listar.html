@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listando usuarios</title>
+    <style>
+        th,td {
+            border : 1px solid black;
+            padding : 4px;
+        }
+        th {
+            background-color: #c9cc87; /* Color de fondo para los encabezados */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lista de usuarios</h1>
+
+<!-- usuarios.size()==0 -->
+<h4 th:if="${usuarios.isEmpty()}">La lista de usuarios está vacía...</h4>
+<table th:if="${!usuarios.isEmpty()}">
+    <thead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Teléfono</th>
+    <th>Email</th>
+    </thead>
+    <tbody>
+    <tr th:each="usuario: ${usuarios}">
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.apellido}"></td>
+        <td th:text="${usuario.telefono}"></td>
+        <td th:text="${usuario.email}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Despues de ver @ModelAttribute -->
+<h4>Hora actual: <span th:text="${horaActual}"></span></h4>
+
+</body>
+</html>

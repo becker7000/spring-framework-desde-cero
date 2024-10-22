@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Inicio</title>
+    <style>
+        body {
+            font-family: 'Roboto',sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Hola Spring Framework</h1>
+<h3 th:text="${mensaje}"></h3>
+<ul>
+    <li>
+        <a href="/webapp/fecha/mostrar">Mostrar la fecha actual</a>
+    </li>
+    <li>
+        <a href="/webapp/perfil">Datos del usuario</a>
+    </li>
+    <li>
+        <a href="/webapp/listar">Lista de usuarios</a>
+    </li>
+    <li>
+        <a href="/webapp/params/formulario">Formulario 1</a>
+    </li>
+    <li>
+        <a href="/webapp/params/formulario-multi">Formulario de Usuario</a>
+    </li>
+
+</ul>
+
+<h3>Ejemplos con AJAX</h3>
+<ul>
+    <li>
+        <a href="/webapp/ajax/texto">Documento de texto con AJAX</a>
+    </li>
+    <li>
+        <a href="/webapp/ajax/api">Consumiendo API con AJAX</a>
+    </li>
+    <li>
+        <a href="/webapp/ajax/reloj_ajax">Reloj con AJAX</a>
+    </li>
+</ul>
+
+</body>
+</html>

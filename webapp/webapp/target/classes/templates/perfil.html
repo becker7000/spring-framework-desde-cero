@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuario</title>
+</head>
+<body>
+
+<h1>Datos del usuario</h1>
+<h3>Nombre: <span th:text="${usuario.nombre}"></span></h3>
+<h3>Teléfono: <span th:text="${usuario.telefono}"></span></h3>
+
+<!-- Usando un if (agregar despues) -->
+<h3 th:if="${usuario.email}">Email: <span th:text="${usuario.email}"></span></h3>
+<h3 th:if="${usuario.email==null}">El usuario no tiene correo</h3>
+
+<!-- Despues de ver @ModelAttribute -->
+<h4>Hora actual: <span th:text="${horaActual}"></span></h4>
+
+</body>
+</html>

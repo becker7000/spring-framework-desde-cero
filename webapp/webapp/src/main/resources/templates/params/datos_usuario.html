@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos recibidos</title>
+</head>
+<body>
+
+<h2>Datos de un usuario:</h2>
+<h4>Nombre: <span th:text="${usuario.nombre}"></span></h4>
+<h4>Apellido: <span th:text="${usuario.apellido}"></span></h4>
+<h4>Teléfono: <span th:text="${usuario.telefono}"></span></h4>
+<h4>Email: <span th:text="${usuario.email}"></span></h4>
+
+<br/>
+<a href="/webapp/index">Volver al Inicio</a>
+
+</body>
+</html>

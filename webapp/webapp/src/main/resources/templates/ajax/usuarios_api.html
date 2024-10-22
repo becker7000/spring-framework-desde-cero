@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        table{
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        th{
+            border-bottom: 2px solid darkcyan;
+            padding: 12px;
+            margin: 4px;
+        }
+        #tbody tr td{
+            border-bottom: 2px solid darkolivegreen;
+            padding: 12px;
+            margin: 4px;
+        }
+    </style>
+    <title>Usando AJAX y una API</title>
+</head>
+<body>
+
+<div class="titulo">
+    <h2>Usando AJAX con JQuery para consumir una API</h2>
+</div>
+<table>
+    <tbody id="tbody">
+    </tbody>
+</table>
+<script>
+
+$.ajax("https://randomuser.me/api?results=20",{
+
+    success(json){
+
+        // Primero ocultamos la tabla:
+        $("table").hide();
+
+        $("table").append(
+            $("<thead></thead>").html(
+                `
+                    <th>Title</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Age</th>
+                    <th>Picture</th>
+                `
+            )
+        )
+
+        for(let user of json.results){
+            /* console.log("Title: %s",user.name.title);
+               console.log("Name: %s",user.name.first);
+               console.log("Phone: %s",user.phone);
+               console.log("Age: %d",user.dob.age);*/
+
+            $("#tbody").append(
+                $("<tr></tr>").html(
+                    `
+                        <td>${user.name.title}</td>
+                        <td>${user.name.first}</td>
+                        <td>${user.phone}</td>
+                        <td>${user.dob.age}</td>
+                        <td><img src="${user.picture.medium}" alt="user"></td>
+                    `
+                )
+            )
+        }
+        // Efecto visual
+        $("table").fadeIn(2400);
+    },
+    error(error){
+        alert("Error en el consumo de la API");
+    }
+
+});
+</script>
+
+</body>
+</html>

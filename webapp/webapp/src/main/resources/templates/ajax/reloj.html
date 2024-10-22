@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+    </style>
+    <title>Reloj con AJAX</title>
+</head>
+<body>
+
+<h1>Reloj con AJAX:</h1>
+<h1 id="clock"></h1>
+<script>
+    $(document).ready(function() {
+      setInterval(obtenerTiempo, 1000);
+    });
+    function obtenerTiempo() {
+      $.ajax({
+        url: "/webapp/ajax/reloj", // Ruta del controlador
+        type: "GET",
+        success: function(response) {
+          $("#clock").text(response); // Actualiza el contenido del reloj
+        },
+        error: function(xhr, status, error) {
+          console.log("Error al obtener la hora: " + error);
+        }
+      });
+    }
+</script>
+
+</body>
+</html>
