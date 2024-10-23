@@ -39,5 +39,16 @@
 <!-- Despues de ver @ModelAttribute -->
 <h4>Hora actual: <span th:text="${horaActual}"></span></h4>
 
+<ul>
+    <li>
+        <!-- Enlace para generar el PDF -->
+        <a th:href="@{/generate-pdf}" style="margin-top: 20px;">Generar PDF</a>
+    </li>
+    <li>
+        <!-- Enlace para generar el Excel -->
+        <a th:href="@{/generate-excel}" style="margin-top: 20px;">Generar Excel</a>
+    </li>
+</ul>
+
 </body>
 </html>
