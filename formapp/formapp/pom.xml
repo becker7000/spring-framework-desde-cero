@@ -8,11 +8,12 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>mx.com.cst.webapp</groupId>
-	<artifactId>market</artifactId>
+	<groupId>com.example.form</groupId>
+	<artifactId>formapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>market</name>
-	<description>Primeros pasos con Spring</description>
+	<packaging>war</packaging>
+	<name>formapp</name>
+	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -35,31 +36,17 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- dependencias para el conector de mysql y jpa -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>3.3.4</version>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
-		<!-- DEPENDENCIAS DE MYSQL -->
+		<!-- DEPENDENCIA PARA LOS JSP -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.33</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<version>3.3.4</version>
-		</dependency>
-
-		<!-- SPRING SECURUTY -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
