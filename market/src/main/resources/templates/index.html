@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Productos</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/market/api/productos/formulario" class="btn btn-success mb-3">Añadir Producto</a>
+            <h2 class="mt-4">Lista de Productos</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Existencias</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.id}"></td>
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.precio}"></td>
+                    <td th:text="${producto.existencias}"></td>
+                    <td th:text="${producto.categoria}"></td>
+                    <td>
+                        <a th:href="@{/api/productos/formulario(id=${producto.id})}" class="btn btn-warning btn-sm">Editar</a>
+                        <a th:href="@{/api/productos/eliminar(id=${producto.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?');">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
