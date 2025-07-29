@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de usuarios</title>
+    <style>
+        th, td{
+            border: 1px solid blue;
+            padding: 4px;
+        }
+        th {
+            background-color: #c9cc87;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lista de usuarios</h2>
+    <h3 th:if="${usuarios.isEmpty()}">La lista de usuarios está vacía...</h3>
+    <table th:if="${!usuarios.isEmpty()}">
+        <thead>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.telefono}"></td>
+                <td th:text="${usuario.correo}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a th:href="@{/generar-pdf}" style="padding: 8px;">Generar PDF</a>
+        </li>
+        <li>
+            <a th:href="@{/generar-excel}" style="padding: 8px;">Generar Excel</a>
+        </li>
+    </ul>
+
+</body>
+</html>

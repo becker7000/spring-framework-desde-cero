@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelief.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+        li {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 th:text="${mensaje}"></h1>
+
+    <h3>Primeros pasos:</h3>
+    <ul>
+        <li>
+            <a href="/first-webapp/saludo/hola">Hola Spring</a>
+        </li>
+        <li>
+            <a href="/first-webapp/perfil">Perfil de usuario</a>
+        </li>
+        <li>
+            Hora actual: <span th:text="${horaActual}"></span>
+        </li>
+        <li>
+            <a href="/first-webapp/listar-usuarios">Lista de usuarios</a>
+        </li>
+    </ul>
+
+</body>
+</html>
