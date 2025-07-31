@@ -36,20 +36,30 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- Apache POI para Excel -->
+		<!-- Dependencia Apache POI para Excel -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.4.1</version>
 		</dependency>
-
-		<!-- iText 7 para PDF -->
+		<!-- Dependencia iText 7 para PDF -->
 		<dependency>
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itext7-core</artifactId>
 			<version>9.2.0</version>
 			<type>pom</type>
+		</dependency>
+		<!-- Dependencia para Spring Data JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>3.3.4</version>
+		</dependency>
+		<!-- Dependencia para conectar con MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
 		</dependency>
 	</dependencies>
 
